@@ -1,0 +1,26 @@
+﻿@model StateViewModel
+
+<div class="text-center border border-1 p-2">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/NYC_Downtown_Manhattan_Skyline_seen_from_Paulus_Hook_2019-12-20_IMG_7347_FRD_%28cropped%29.jpg/1200px-NYC_Downtown_Manhattan_Skyline_seen_from_Paulus_Hook_2019-12-20_IMG_7347_FRD_%28cropped%29.jpg" alt="New York image">
+    <h3><b>Name: </b>@Model.Name</h3>
+    <h3><b>Population: </b>@Model.Population</h3>
+    <h3><b>Area: </b>@Model.Area</h3>
+    <h3><b>Crashes per year: </b>@Model.CrashesPerYear</h3>
+    <div>
+        <button class="btn btn-info" id="predictions-button">Show predictions</button>
+        <button class="btn btn-info" id="visualise-button">Show car crashes from last 7 days</button>
+    </div>
+</div>
+
+<script>
+    let predictionsButton = document.getElementById("predictions-button");
+    let visualiseButton = document.getElementById("visualise-button");
+
+    predictionsButton.addEventListener('click', () => {
+        window.open("/home/prediction/@Model.Name");
+    });
+    visualiseButton.addEventListener('click', () => {
+        window.open("/home/visualise/@Model.Name");
+    });
+
+</script>
