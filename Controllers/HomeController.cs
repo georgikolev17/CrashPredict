@@ -22,7 +22,7 @@ namespace CrashVisualizer.Controllers
         [HttpPost]
         public IActionResult Index(string stateName)
         {
-            StateViewModel model = new StateViewModel(stateName, 19840000, 141300, 10000);
+            StateViewModel model = new StateViewModel(stateName, StatesInfo.NewYork.Population, StatesInfo.NewYork.Area, StatesInfo.NewYork.CrashesPerYear);
             return View("StateInfo", model);
         }
 
